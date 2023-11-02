@@ -4,7 +4,7 @@ bl_info = {
     "location": "View3D > Sidebar > Edit",
     "description": "Set Vertex Color on selected element",
     "author": "PDE26jjk",
-    "version": (1, 0, 0),
+    "version": (1, 0, 1),
     "blender": (3, 4, 0),
     "support": "COMMUNITY",
     "wiki_url": "",
@@ -208,7 +208,10 @@ class GetColorOperator(Operator):
 
 class VertexColorToolProp(PropertyGroup):
     palette: bpy.props.PointerProperty(type=bpy.types.Palette)
-    color: bpy.props.FloatVectorProperty(subtype = "COLOR")
+    color: bpy.props.FloatVectorProperty(
+                                        subtype = "COLOR",
+                                        size=3,
+                                        min=0.0, max=1.0)
     alpha: bpy.props.FloatProperty(min= 0,max=1)
     gamma_correction: bpy.props.BoolProperty(name= "gamma correction",
                                             default=False,
