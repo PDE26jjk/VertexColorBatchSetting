@@ -167,7 +167,7 @@ class SelectColorOperator(Operator):
         palette = prop.palette
         if index >= 0 and index < len(palette.colors):
             prop.color = palette.colors[index].color
-            print(palette.colors[index].color)
+            # print(palette.colors[index].color)
         return {'FINISHED'}
     
 class SetColorOperator(Operator):
